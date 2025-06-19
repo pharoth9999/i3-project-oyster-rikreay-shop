@@ -1,0 +1,18 @@
+/* Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: black white;
+}
+
+/* Chrome, Safari, Edge */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: white;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: black;
+}

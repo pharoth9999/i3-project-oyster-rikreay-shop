@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oyster Rikreay shop</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="javascript/script.js"></script>
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/marqueeScroll.css" />
+    <link rel="stylesheet" href="css/fallingPetals.css" />
+    <link rel="stylesheet" href="css/productCart.css" />
+    <link rel="stylesheet" href="css/scrollBar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script defer src="javascript/cart.js"></script>
+  </head>
+  <body class="bg-[#000000]">
+    <!-- header -->
+    <header class="bg-black w-full">
+      <div
+        class="md:mx-5 lg:mx-20 flex h-16 max-w-screen-full items-center gap-8 px-4 md:px-0 justify-center md:justify-between"
+      >
+        <div class="flex items-center md:hidden">
+          <!-- humburger -->
+          <div class="relative">
+            <!-- Hamburger Button -->
+            <button id="hamburger" class="text-white p-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+
+            <!-- Mobile Dropdown Menu -->
+            <nav
+              id="mobile-menu"
+              class="hidden absolute top-full left-0 w-48 border bg-black border-solid-2 border-white poppins-semibold text-white shadow-lg z-50"
+            >
+              <ul class="flex flex-col gap-2 p-4">
+                <li>
+                  <a class="hover:underline" href="#team-kit">Team Kit</a>
+                </li>
+                <li>
+                  <a class="hover:underline" href="essentials.html"
+                    >Essentials</a
+                  >
+                </li>
+                <li>
+                  <a class="hover:underline" href="shop-all.html">Shop all</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- phone search -->
+          <div class="flex items-center justify-center md:hidden">
+            <form action="" class="relative w-max max-auto">
+              <input
+                name="search"
+                id="search"
+                placeholder="Search..."
+                class="relative peer z-10 bg-transparent w-5 h-10 pl-9 border border-transparent focus:w-30 focus:border focus:border-white focus:cursor-text focus:text-white focus:pl-14 focus:pr-2 outline-none"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 absolute left-3 top-1/2 -translate-y-1/2 text-white transition-all peer-focus:text-white peer-focus:translate-x-0 peer-focus:top-1/2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
+              </svg>
+            </form>
+          </div>
+        </div>
+
+        <!-- mobile logo -->
+        <a
+          class="absolute left-1/2 -translate-x-1/2 text-white font-bold md:static md:translate-x-0 md:hidden"
+          href="index.html"
+        >
+          <h1>ORR</h1>
+        </a>
+
+        <!-- nva-bar -->
+        <div class="flex flex-1 items-center justify-end md:justify-between">
+          <nav class="hidden md:block">
+            <ul class="flex items-center gap-10 poppins-semibold">
+              <!-- logo -->
+              <li>
+                <a
+                  class="absolute left-1/2 -translate-x-1/2 poppins-bold text-white md:static md:translate-x-0"
+                  href="index.html"
+                >
+                  <h1>ORR</h1>
+                </a>
+              </li>
+              <li>
+                <a class="text-white transition hover:underline" href="#">
+                  Team Kit
+                </a>
+              </li>
+              <li>
+                <a
+                  class="text-white transition hover:underline"
+                  href="essentials.html"
+                >
+                  Essentials
+                </a>
+              </li>
+              <li>
+                <a
+                  class="text-white transition hover:underline"
+                  href="shop-all.html"
+                >
+                  Shop all
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- search-cart-acc -->
+        <div class="flex items-center">
+          <div class="flex items-center gap-3 md:flex md:items-center md:gap-3">
+            <!-- desktop search -->
+            <div class="items-center justify-center md:block hidden">
+              <form action="" class="relative w-max max-auto">
+                <input
+                  name="search"
+                  id="search"
+                  placeholder="Search..."
+                  class="relative peer z-10 bg-transparent w-10 h-9 pl-9 border border-transparent focus:w-full focus:border focus:border-white focus:cursor-text focus:text-white focus:pl-14 focus:pr-2 outline-none"
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 absolute left-3 top-1/2 -translate-y-1/2 text-white transition-all peer-focus:text-white peer-focus:translate-x-0 peer-focus:top-1/2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                  />
+                </svg>
+              </form>
+            </div>
+
+            <!-- account -->
+            <a class="rounded-md text-white transition mr-2 md:mr-1" href="sign-in.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                />
+              </svg>
+            </a>
+
+            <!-- cart -->
+            <a
+              class="sm:flex rounded-md text-white transition flex items-center gap-1"
+              href="cart.html"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                />
+              </svg>
+              <p id="cart-count" class="poppins-medium"></p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- main content -->
+    <main class="w-full min-h-screen">
+      <div class="max-w-screen-full mx-5 lg:mx-20 text-white">
+        <h1 class="text-3xl text-white poppins-bold text-center">Checkout</h1>
+
+        <div
+          class="bg-[#232323] border border-white text-white p-4 max-w-md mx-auto mt-6"
+        >
+          <h2 class="text-xl mb-2 poppins-semibold">Your Order</h2>
+          <table class="w-full text-sm mb-4 border-separate border-spacing-y-4">
+            <thead class="poppins-medium">
+              <tr>
+                <th class="text-left">Product</th>
+                <th class="text-right">Subtotal</th>
+              </tr>
+            </thead>
+            <tbody id="order-items"></tbody>
+          </table>
+          <div class="flex justify-between border-t pt-2 poppins-regular">
+            <span>Subtotal</span>
+            <span id="subtotal">$0</span>
+          </div>
+          <div class="flex justify-between poppins-regular mt-2">
+            <span>Delivery</span>
+            <span id="delivery">$10</span>
+          </div>
+          <div class="flex justify-between poppins-semibold mt-2">
+            <span>Total</span>
+            <span id="total">$0</span>
+          </div>
+          <div class="relative w-full text-left mt-3">
+            <button
+              id="dropdownButton"
+              class="w-full text-white flex items-center gap-2 poppins-regular text-sm border border-white px-4 py-2 hover:bg-white hover:text-black transition-all"
+            >
+              <span id="sortLabel" class="poppins-medium text-sm"
+                >Choose your Payment methods</span
+              >
+            </button>
+
+            <div
+              id="dropdownMenu"
+              class="hidden absolute w-full mt-2 shadow-lg bg-[#232323] border border-white z-50 poppins-regular"
+            >
+              <ul class="py-2 text-white">
+                <li>
+                  <a
+                    href="#"
+                    data-label="Credit Card"
+                    class="block px-4 py-2 hover:bg-white hover:text-black"
+                    >Credit Card</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    data-label="ABA Bank"
+                    class="block px-4 py-2 hover:bg-white hover:text-black"
+                    >ABA Bank</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    data-label="Acleda Bank"
+                    class="block px-4 py-2 hover:bg-white hover:text-black"
+                    >Acleda Bank</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-4">
+            <input
+              type="text"
+              class="w-full border border-white p-2 text-white mb-4 poppins-regular pl-4"
+              placeholder="Phone Number"
+            />
+            <button
+              onclick="placeOrder()"
+              class="w-full bg-white text-black py-3 poppins-medium"
+            >
+              Place Order
+            </button>
+          </div>
+        </div>
+        <!-- ✅ Success Modal -->
+        <div
+          id="successModal"
+          class="fixed inset-0 bg-black bg-opacity-70 items-center justify-center hidden z-50"
+        >
+          <div
+            class="bg-black text-white border border-white p-6 text-center max-w-sm w-[90%]"
+          >
+            <h2 class="text-2xl poppins-semibold mb-4">Order Placed!</h2>
+            <p class="mb-6 poppins-regular">Thank you for your purchase.</p>
+            <a
+              href="index.html"
+              class="inline-block bg-white text-black px-6 py-2 poppins-medium"
+            >
+              Return to Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- footer -->
+    <footer class="bg-[#161616] mt-9">
+      <div class="w-full py-6">
+        <div
+          class="max-w-screen-full md:mx-5 lg:mx-20 flex flex-col md:flex md:flex-row justify-between items-center text-white py-4 gap-3 md:gap-0"
+        >
+          <p class="poppins-bold">Oyster Rikreay</p>
+          <div class="flex gap-4 poppins-medium">
+            <a href="contact.html">Contact</a>
+            <p>|</p>
+            <a href="about.html">About us</a>
+          </div>
+          <div class="flex gap-4">
+            <a href=""><i class="fa-brands fa-tiktok"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const orderItems = document.getElementById("order-items");
+      const subtotalEl = document.getElementById("subtotal");
+      const deliveryFee = 10;
+      const totalEl = document.getElementById("total");
+
+      let subtotal = 0;
+
+      cart.forEach((item) => {
+        const itemRow = document.createElement("tr");
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+
+        itemRow.innerHTML = `
+      <td class="poppins-regular">${item.name} x${item.quantity}</td>
+      <td class="text-right poppins-regular">$${itemTotal.toFixed(2)}</td>
+    `;
+        orderItems.appendChild(itemRow);
+      });
+
+      subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+      totalEl.textContent = `$${(subtotal + deliveryFee).toFixed(2)}`;
+
+      function placeOrder() {
+        localStorage.removeItem("cart");
+        const modal = document.getElementById("successModal");
+        if (modal) {
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+        } else {
+          alert("Success modal not found. Did you add the HTML?");
+        }
+      }
+      const dropdownButton = document.getElementById("dropdownButton");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+      const sortLabel = document.getElementById("sortLabel");
+      const sortLinks = dropdownMenu.querySelectorAll("a");
+
+      // Toggle dropdown
+      dropdownButton.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("hidden");
+      });
+
+      // Hide dropdown on outside click
+      window.addEventListener("click", (event) => {
+        if (
+          !dropdownButton.contains(event.target) &&
+          !dropdownMenu.contains(event.target)
+        ) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+      sortLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const label = e.target.dataset.label;
+
+          // Update the label text
+          sortLabel.textContent = label;
+          dropdownMenu.classList.add("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>

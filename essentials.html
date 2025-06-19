@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oyster Rikreay shop</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="javascript/script.js"></script>
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/marqueeScroll.css" />
+    <link rel="stylesheet" href="css/fallingPetals.css" />
+    <link rel="stylesheet" href="css/productCart.css" />
+    <link rel="stylesheet" href="css/scrollBar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script defer src="javascript/cart.js"></script>
+  </head>
+  <body class="bg-[#000000]">
+    <!-- header -->
+    <header class="bg-black w-full">
+      <div
+        class="md:mx-5 lg:mx-20 flex h-16 max-w-screen-full items-center gap-8 px-4 md:px-0 justify-center md:justify-between"
+      >
+        <div class="flex items-center md:hidden">
+          <!-- humburger -->
+          <div class="relative">
+            <!-- Hamburger Button -->
+            <button id="hamburger" class="text-white p-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+
+            <!-- Mobile Dropdown Menu -->
+            <nav
+              id="mobile-menu"
+              class="hidden absolute top-full left-0 w-48 border bg-black border-solid-2 border-white poppins-semibold text-white shadow-lg z-50"
+            >
+              <ul class="flex flex-col gap-2 p-4">
+                <li>
+                  <a class="hover:underline" href="team-kit.html">Team Kit</a>
+                </li>
+                <li>
+                  <a class="hover:underline" href="#">Essentials</a>
+                </li>
+                <li>
+                  <a class="hover:underline" href="shop-all.html">Shop all</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- phone search -->
+          <div class="flex items-center justify-center md:hidden">
+            <form action="" class="relative w-max max-auto">
+              <input
+                name="search"
+                id="search"
+                placeholder="Search..."
+                class="relative peer z-10 bg-transparent w-5 h-10 pl-9 border border-transparent focus:w-30 focus:border focus:border-white focus:cursor-text focus:text-white focus:pl-14 focus:pr-2 outline-none"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 absolute left-3 top-1/2 -translate-y-1/2 text-white transition-all peer-focus:text-white peer-focus:translate-x-0 peer-focus:top-1/2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
+              </svg>
+            </form>
+          </div>
+        </div>
+
+        <!-- mobile logo -->
+        <a
+          class="absolute left-1/2 -translate-x-1/2 text-white font-bold md:static md:translate-x-0 md:hidden"
+          href="index.html"
+        >
+          <h1>ORR</h1>
+        </a>
+
+        <!-- nva-bar -->
+        <div class="flex flex-1 items-center justify-end md:justify-between">
+          <nav class="hidden md:block">
+            <ul class="flex items-center gap-10 poppins-semibold">
+              <!-- logo -->
+              <li>
+                <a
+                  class="absolute left-1/2 -translate-x-1/2 poppins-bold text-white md:static md:translate-x-0"
+                  href="index.html"
+                >
+                  <h1>ORR</h1>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="text-white transition hover:underline"
+                  href="team-kit.html"
+                >
+                  Team Kit
+                </a>
+              </li>
+              <li>
+                <a class="text-white transition hover:underline" href="#">
+                  Essentials
+                </a>
+              </li>
+              <li>
+                <a
+                  class="text-white transition hover:underline"
+                  href="shop-all.html"
+                >
+                  Shop all
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- search-cart-acc -->
+        <div class="flex items-center">
+          <div class="flex items-center gap-3 md:flex md:items-center md:gap-3">
+            <!-- desktop search -->
+            <div class="items-center justify-center md:block hidden">
+              <form action="" class="relative w-max max-auto">
+                <input
+                  name="search"
+                  id="search"
+                  placeholder="Search..."
+                  class="relative peer z-10 bg-transparent w-10 h-9 pl-9 border border-transparent focus:w-full focus:border focus:border-white focus:cursor-text focus:text-white focus:pl-14 focus:pr-2 outline-none"
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 absolute left-3 top-1/2 -translate-y-1/2 text-white transition-all peer-focus:text-white peer-focus:translate-x-0 peer-focus:top-1/2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                  />
+                </svg>
+              </form>
+            </div>
+
+            <!-- account -->
+            <a class="rounded-md text-white transition mr-2 md:mr-1" href="sign-in.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                />
+              </svg>
+            </a>
+
+            <!-- cart -->
+            <a
+              class="sm:flex rounded-md text-white transition flex items-center gap-1"
+              href="cart.html"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                />
+              </svg>
+              <p id="cart-count" class="poppins-medium"></p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- main content -->
+    <main class="w-full min-h-screen">
+      <div class="max-w-screen-full mx-5 lg:mx-20 text-white">
+        <!-- essentials -->
+        <div class="flex justify-between items-center gap-4 mt-9">
+          <h1 class="poppins-semibold text-xl md:text-3xl">Essentials</h1>
+          <!-- sort by dropdown -->
+          <div class="relative inline-block text-left">
+            <button
+              id="dropdownButton"
+              class="bg-black text-white flex items-center gap-2 poppins-regular text-sm"
+            >
+              Sort by
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="size-5"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span id="sortLabel" class="poppins-semibold">Default</span>
+            </button>
+
+            <div
+              id="dropdownMenu"
+              class="hidden absolute mt-2 w-30 md:w-60 shadow-lg bg-black border border-white z-50 poppins-semibold"
+            >
+              <ul class="py-2 text-white">
+                <li>
+                  <a
+                    href="#"
+                    data-sort="default"
+                    data-label="Default"
+                    class="block px-4 py-2 hover:bg-white hover:text-black"
+                    >Default</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    data-sort="low-high"
+                    data-label="Price: Low to High"
+                    class="block px-4 py-2 hover:bg-white hover:text-black"
+                    >Price: Low to High</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    data-sort="high-low"
+                    data-label="Price: High to Low"
+                    class="block px-4 py-2 hover:bg-white hover:text-black"
+                    >Price: High to Low</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center md:justify-start mt-10">
+          <div
+            id="product-list"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5 mt-5"
+          >
+            <!-- first product card -->
+            <div
+              class="flex flex-col w-80 shrink-0 bg-white"
+              data-price="25.00"
+            >
+              <div class="product">
+                <button
+                  class="cart-button"
+                  onclick="addToCart({
+                      id: 't-shirt-1',
+                      name: 'Why not us? T-shirt',
+                      price: 25.00,
+                      img: 'img/geng-1.png'
+                    })"
+                >
+                  <!-- cart icon -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    />
+                  </svg>
+                </button>
+                <img src="img/geng-1.png" alt="" class="hidden md:block" />
+                <a href="product-detail.html" class="block md:hidden"
+                  ><img src="img/geng-1.png" alt=""
+                /></a>
+                <a
+                  href="product-detail.html"
+                  class="select-product poppins-medium"
+                >
+                  + Select Options
+                </a>
+              </div>
+              <div class="poppins-semibold text-black ml-2">
+                <p>Why not us? T-shirt</p>
+                <p>$25.00</p>
+              </div>
+            </div>
+            <!-- second product card -->
+            <div
+              class="flex flex-col w-80 shrink-0 bg-white"
+              data-price="29.99"
+            >
+              <div class="product">
+                <button
+                  class="cart-button"
+                  onclick="addToCart({
+                      id: 'headband-1',
+                      name: 'GenRang Cheering Headband',
+                      price: 29.00,
+                      img: 'img/geng-2.png'
+                    })"
+                >
+                  <!-- card icon -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    />
+                  </svg>
+                </button>
+                <img src="img/geng-2.png" alt="" class="hidden md:block" />
+                <a href="product-detail.html" class="block md:hidden"
+                  ><img src="img/geng-2.png" alt=""
+                /></a>
+                <a
+                  href="product-detail.html"
+                  class="select-product poppins-medium"
+                >
+                  + Select Options
+                </a>
+              </div>
+              <div class="poppins-semibold text-black ml-2">
+                <p>GenRang Cheering Headband</p>
+                <p>$29.99</p>
+              </div>
+            </div>
+            <!-- third product card -->
+            <div
+              class="flex flex-col w-80 shrink-0 bg-white"
+              data-price="33.00"
+            >
+              <div class="product">
+                <button
+                  class="cart-button"
+                  onclick="addToCart({
+                      id: 'toy-1',
+                      name: 'GenRang Keyring',
+                      price: 33.00,
+                      img: 'img/geng-3.png'
+                    })"
+                >
+                  <!-- cart icon -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    />
+                  </svg>
+                </button>
+                <img src="img/geng-3.png" alt="" class="hidden md:block" />
+                <a href="product-detail.html" class="block md:hidden"
+                  ><img src="img/geng-3.png" alt=""
+                /></a>
+                <a
+                  href="product-detail.html"
+                  class="select-product poppins-medium"
+                >
+                  + Select Options
+                </a>
+              </div>
+              <div class="poppins-semibold text-black ml-2">
+                <p>GenRang Keyring</p>
+                <p>$33.00</p>
+              </div>
+            </div>
+            <!-- fourth product card -->
+            <div
+              class="flex flex-col w-80 shrink-0 bg-white"
+              data-price="30.00"
+            >
+              <div class="product">
+                <button
+                  class="cart-button"
+                  onclick="addToCart({
+                      id: 'hat-1',
+                      name: 'Genrang hat',
+                      price: 30.00,
+                      img: 'img/summer-hat.png'
+                    })"
+                >
+                  <!-- cart icon -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    />
+                  </svg>
+                </button>
+                <img src="img/summer-hat.png" alt="" class="hidden md:block" />
+                <a href="product-detail.html" class="block md:hidden"
+                  ><img src="img/summer-hat.png" alt=""
+                /></a>
+                <a
+                  href="product-detail.html"
+                  class="select-product poppins-medium"
+                >
+                  + Select Options
+                </a>
+              </div>
+              <div class="poppins-semibold text-black ml-2">
+                <p>Genrang hat</p>
+                <p>$30.00</p>
+              </div>
+            </div>
+            <!-- fifth product card -->
+            <div
+              class="flex flex-col w-80 shrink-0 bg-white"
+              data-price="20.00"
+            >
+              <div class="product">
+                <button
+                  class="cart-button"
+                  onclick="addToCart({
+                      id: 'cup-1',
+                      name: 'Church of GenRang Cup Set',
+                      price: 20.00,
+                      img: 'img/cup.png'
+                    })"
+                >
+                  <!-- cart icon -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    />
+                  </svg>
+                </button>
+                <img src="img/cup.png" alt="" class="hidden md:block" />
+                <a href="product-detail.html" class="block md:hidden"
+                  ><img src="img/cup.png" alt=""
+                /></a>
+                <a
+                  href="product-detail.html"
+                  class="select-product poppins-medium"
+                >
+                  + Select Options
+                </a>
+              </div>
+              <div class="poppins-semibold text-black ml-2">
+                <p>Church of GenRang Cup Set</p>
+                <p>$20.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- footer -->
+    <footer class="bg-[#161616] mt-9">
+      <div class="w-full py-6">
+        <div
+          class="max-w-screen-full md:mx-5 lg:mx-20 flex flex-col md:flex md:flex-row justify-between items-center text-white py-4 gap-3 md:gap-0"
+        >
+          <p class="poppins-bold">Oyster Rikreay</p>
+          <div class="flex gap-4 poppins-medium">
+            <a href="contact.html">Contact</a>
+            <p>|</p>
+            <a href="about.html">About us</a>
+          </div>
+          <div class="flex gap-4">
+            <a href=""><i class="fa-brands fa-tiktok"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- JavaScript for dropdown and sorting -->
+    <script>
+      const dropdownButton = document.getElementById("dropdownButton");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+      const sortLabel = document.getElementById("sortLabel");
+      const sortLinks = dropdownMenu.querySelectorAll("a");
+      const productList = document.getElementById("product-list");
+
+      // Toggle dropdown
+      dropdownButton.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("hidden");
+      });
+
+      // Hide dropdown on outside click
+      window.addEventListener("click", (event) => {
+        if (
+          !dropdownButton.contains(event.target) &&
+          !dropdownMenu.contains(event.target)
+        ) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+
+      // Sort logic
+      sortLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const sortType = e.target.dataset.sort;
+          const label = e.target.dataset.label;
+
+          // Update label next to "Sort by"
+          sortLabel.textContent = label;
+
+          const products = Array.from(productList.children);
+
+          let sortedProducts;
+          if (sortType === "low-high") {
+            sortedProducts = products.sort(
+              (a, b) =>
+                parseFloat(a.getAttribute("data-price")) -
+                parseFloat(b.getAttribute("data-price"))
+            );
+          } else if (sortType === "high-low") {
+            sortedProducts = products.sort(
+              (a, b) =>
+                parseFloat(b.getAttribute("data-price")) -
+                parseFloat(a.getAttribute("data-price"))
+            );
+          } else {
+            sortedProducts = products; // or keep original order some other way
+          }
+
+          productList.innerHTML = "";
+          sortedProducts.forEach((product) => productList.appendChild(product));
+
+          dropdownMenu.classList.add("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>

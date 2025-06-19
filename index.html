@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="javascript/script.js"></script>
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/marqueeScroll.css" />
+    <link rel="stylesheet" href="css/fallingPetals.css" />
+    <link rel="stylesheet" href="css/productCart.css" />
+    <link rel="stylesheet" href="css/scrollBar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script defer src="javascript/cart.js"></script>
+  </head>
+  <body class="bg-[#000000]">
+    <!-- header -->
+    <header class="bg-black w-full">
+      <div
+        class="md:mx-5 lg:mx-20 flex h-16 max-w-screen-full items-center gap-8 px-4 md:px-0 justify-center md:justify-between"
+      >
+        <div class="flex items-center md:hidden">
+          <!-- humburger -->
+          <div class="relative">
+            <!-- Hamburger Button -->
+            <button id="hamburger" class="text-white p-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+
+            <!-- Mobile Dropdown Menu -->
+            <nav
+              id="mobile-menu"
+              class="hidden absolute top-full left-0 w-48 border bg-black border-solid-2 border-white poppins-semibold text-white shadow-lg z-50"
+            >
+              <ul class="flex flex-col gap-2 p-4">
+                <li>
+                  <a class="hover:underline" href="team-kit.html">Team Kit</a>
+                </li>
+                <li>
+                  <a class="hover:underline" href="essentials.html"
+                    >Essentials</a
+                  >
+                </li>
+                <li>
+                  <a class="hover:underline" href="shop-all.html">Shop all</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- phone search -->
+          <div class="flex items-center justify-center md:hidden">
+            <form action="" class="relative w-max max-auto">
+              <input
+                name="search"
+                id="search"
+                placeholder="Search..."
+                class="relative peer z-10 bg-transparent w-5 h-10 pl-9 border border-transparent focus:w-30 focus:border focus:border-white focus:cursor-text focus:text-white focus:pl-14 focus:pr-2 outline-none"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 absolute left-3 top-1/2 -translate-y-1/2 text-white transition-all peer-focus:text-white peer-focus:translate-x-0 peer-focus:top-1/2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
+              </svg>
+            </form>
+          </div>
+        </div>
+
+        <!-- mobile logo -->
+        <a
+          class="absolute left-1/2 -translate-x-1/2 text-white font-bold md:static md:translate-x-0 md:hidden"
+          href="#"
+        >
+          <h1>ORR</h1>
+        </a>
+
+        <!-- nva-bar -->
+        <div class="flex flex-1 items-center justify-end md:justify-between">
+          <nav class="hidden md:block">
+            <ul class="flex items-center gap-10 poppins-semibold">
+              <!-- logo -->
+              <li>
+                <a
+                  class="absolute left-1/2 -translate-x-1/2 poppins-bold text-white md:static md:translate-x-0"
+                  href="#"
+                >
+                  <h1>ORR</h1>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="text-white transition hover:underline"
+                  href="team-kit.html"
+                >
+                  Team Kit
+                </a>
+              </li>
+              <li>
+                <a
+                  class="text-white transition hover:underline"
+                  href="essentials.html"
+                >
+                  Essentials
+                </a>
+              </li>
+              <li>
+                <a
+                  class="text-white transition hover:underline"
+                  href="shop-all.html"
+                >
+                  Shop all
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- search-cart-acc -->
+        <div class="flex items-center">
+          <div class="flex items-center gap-3 md:flex md:items-center md:gap-3">
+            <!-- desktop search -->
+            <div class="items-center justify-center md:block hidden">
+              <form action="" class="relative w-max max-auto">
+                <input
+                  name="search"
+                  id="search"
+                  placeholder="Search..."
+                  class="relative peer z-10 bg-transparent w-10 h-9 pl-9 border border-transparent focus:w-full focus:border focus:border-white focus:cursor-text focus:text-white focus:pl-14 focus:pr-2 outline-none"
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 absolute left-3 top-1/2 -translate-y-1/2 text-white transition-all peer-focus:text-white peer-focus:translate-x-0 peer-focus:top-1/2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                  />
+                </svg>
+              </form>
+            </div>
+
+            <!-- account -->
+            <a class="rounded-md text-white transition mr-2 md:mr-1" href="sign-in.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                />
+              </svg>
+            </a>
+
+            <!-- cart -->
+            <a
+              class="sm:flex rounded-md text-white transition flex items-center gap-1"
+              href="cart.html"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                />
+              </svg>
+              <p id="cart-count" class="poppins-medium"></p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- main content -->
+    <main class="w-full">
+      <!-- first section -->
+      <div class="md:mx-5 lg:mx-20 max-w-screen-full">
+        <div class="flex flex-col items-center justify-center">
+          <h1
+            class="text-white text-4xl md:text-8xl font-bold text-center poppins-bold pt-10 md:pt-20"
+          >
+            Oyster Rikreay
+          </h1>
+          <img src="img/T1-Official-front.png" alt="" />
+        </div>
+      </div>
+
+      <!-- marquee -->
+      <div class="max-w-screen-full">
+        <div class="bg-white text-black flex items-center justify-center">
+          <div class="marquee text-3xl poppins-bold tracking-widest p-3">
+            <div class="marquee-content">
+              • New Collection • New Collection • New Collection • New
+              Collection • New Collection • New Collection • New Collection •
+              New Collection • New Collection • New Collection • New Collection
+              • New Collection •
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- new collection -->
+      <div class="md:mx-5 lg:mx-20 max-w-screen-full">
+        <div class="relative overflow-hidden bg-black w-full">
+          <!-- sakura petals -->
+          <img src="img/pngtree-pink-cherry.png" alt="" class="petal" />
+          <img src="img/pngtree-pink-cherry.png" alt="" class="petal" />
+          <img src="img/pngtree-pink-cherry.png" alt="" class="petal" />
+          <img src="img/pngtree-pink-cherry.png" alt="" class="petal" />
+          <img src="img/pngtree-pink-cherry.png" alt="" class="petal" />
+          <img src="img/pngtree-pink-cherry.png" alt="" class="petal" />
+
+          <!-- summer collection -->
+          <div
+            class="flex flex-col md:flex-row md:gap-5 md:justify-between items-center pt-10"
+          >
+            <div
+              class="flex flex-col items-center md:items-start text-white gap-2"
+            >
+              <h2 class="text-3xl md:text-5xl poppins-bold">Explore</h2>
+              <h2 class="text-3xl md:text-5xl poppins-bold">the</h2>
+              <h2 class="text-3xl md:text-5xl poppins-bold">collection</h2>
+              <p class="poppins-regular pt-1 md:pt-3 text-center md:text-left">
+                Welcome to summer season! this is our new collection for summer
+                season
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-10 md:pt-0">
+              <a href="product-detail.html">
+                <img src="img/LR-summer-1.png" alt="" class="w-80 md:w-100" />
+              </a>
+              <a href="product-detail.html">
+                <img
+                  src="img/LR-summer-2-bg.png"
+                  alt=""
+                  class="w-80 md:w-100"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- essentials -->
+      <div class="max-w-screen-full bg-white mt-10">
+        <div
+          class="flex flex-col max-w-screen-full md:mx-5 lg:mx-20 mx-5 gap-4"
+        >
+          <h2 class="text-3xl md:text-5xl poppins-bold mt-2">Essentials</h2>
+          <div class="overflow-x-auto whitespace-nowrap p-4 custom-scrollbar">
+            <div class="flex gap-4">
+              <!-- first product card -->
+              <div class="flex flex-col w-80 shrink-0">
+                <div class="product">
+                  <button
+                    class="cart-button"
+                    onclick="addToCart({
+                      id: 't-shirt-1',
+                      name: 'Why not us? T-shirt',
+                      price: 25.00,
+                      img: 'img/geng-1.png'
+                    })"
+                  >
+                    <!-- cart icon -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                      />
+                    </svg>
+                  </button>
+                  <img src="img/geng-1.png" alt="" class="hidden md:block" />
+                  <a href="product-detail.html" class="block md:hidden"
+                    ><img src="img/geng-1.png" alt=""
+                  /></a>
+                  <a
+                    href="product-detail.html"
+                    class="select-product poppins-medium"
+                  >
+                    + Select Options
+                  </a>
+                </div>
+                <div class="poppins-semibold">
+                  <a class="product-title">Why not us? T-shirt</a>
+                  <p class="product-price">$25.00</p>
+                </div>
+              </div>
+              <!-- second product card -->
+              <div class="flex flex-col w-80 shrink-0">
+                <div class="product">
+                  <button
+                    class="cart-button"
+                    onclick="addToCart({
+                      id: 'headband-1',
+                      name: 'GenRang Cheering Headband',
+                      price: 29.00,
+                      img: 'img/geng-2.png'
+                    })"
+                  >
+                    <!-- card icon -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                      />
+                    </svg>
+                  </button>
+                  <img src="img/geng-2.png" alt="" class="hidden md:block" />
+                  <a href="product-detail.html" class="block md:hidden"
+                    ><img src="img/geng-2.png" alt=""
+                  /></a>
+                  <a
+                    href="product-detail.html"
+                    class="select-product poppins-medium"
+                  >
+                    + Select Options
+                  </a>
+                </div>
+                <div class="poppins-semibold">
+                  <p>GenRang Cheering Headband</p>
+                  <p>$29.99</p>
+                </div>
+              </div>
+              <!-- third product card -->
+              <div class="flex flex-col w-80 shrink-0">
+                <div class="product">
+                  <button
+                    class="cart-button"
+                    onclick="addToCart({
+                      id: 'toy-1',
+                      name: 'GenRang Keyring',
+                      price: 33.00,
+                      img: 'img/geng-3.png'
+                    })"
+                  >
+                    <!-- cart icon -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                      />
+                    </svg>
+                  </button>
+                  <img src="img/geng-3.png" alt="" class="hidden md:block" />
+                  <a href="product-detail.html" class="block md:hidden"
+                    ><img src="img/geng-3.png" alt=""
+                  /></a>
+                  <a
+                    href="product-detail.html"
+                    class="select-product poppins-medium"
+                  >
+                    + Select Options
+                  </a>
+                </div>
+                <div class="poppins-semibold">
+                  <p>GenRang Keyring</p>
+                  <p>$33.00</p>
+                </div>
+              </div>
+              <!-- fourth product card -->
+              <div class="flex flex-col w-80 shrink-0">
+                <div class="product">
+                  <button
+                    class="cart-button"
+                    onclick="addToCart({
+                      id: 'hat-1',
+                      name: 'Genrang hat',
+                      price: 30.00,
+                      img: 'img/summer-hat.png'
+                    })"
+                  >
+                    <!-- cart icon -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                      />
+                    </svg>
+                  </button>
+                  <img
+                    src="img/summer-hat.png"
+                    alt=""
+                    class="hidden md:block"
+                  />
+                  <a href="product-detail.html" class="block md:hidden"
+                    ><img src="img/summer-hat.png" alt=""
+                  /></a>
+                  <a
+                    href="product-detail.html"
+                    class="select-product poppins-medium"
+                  >
+                    + Select Options
+                  </a>
+                </div>
+                <div class="poppins-semibold">
+                  <p>Genrang hat</p>
+                  <p>$30.00</p>
+                </div>
+              </div>
+              <!-- fifth product card -->
+              <div class="flex flex-col w-80 shrink-0">
+                <div class="product">
+                  <button
+                    class="cart-button"
+                    onclick="addToCart({
+                      id: 'cup-1',
+                      name: 'Church of GenRang Cup Set',
+                      price: 20.00,
+                      img: 'img/cup.png'
+                    })"
+                  >
+                    <!-- cart icon -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                      />
+                    </svg>
+                  </button>
+                  <img src="img/cup.png" alt="" class="hidden md:block" />
+                  <a href="product-detail.html" class="block md:hidden"
+                    ><img src="img/cup.png" alt=""
+                  /></a>
+                  <a
+                    href="product-detail.html"
+                    class="select-product poppins-medium"
+                  >
+                    + Select Options
+                  </a>
+                </div>
+                <div class="poppins-semibold">
+                  <p>Church of GenRang Cup Set</p>
+                  <p>$20.00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- team kit -->
+      <div class="max-w-screen-full md:mx-5 lg:mx-20 mx-5 mt-10">
+        <div class="flex flex-col">
+          <h1 class="text-3xl md:text-5xl poppins-bold mt-2 text-white">
+            Team Kit
+          </h1>
+          <div class="flex justify-center md:justify-start">
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 mt-5"
+            >
+              <!-- first product card -->
+              <div class="flex flex-col w-80 shrink-0 bg-white">
+                <div class="product">
+                  <button
+                    class="cart-button"
+                    onclick="addToCart({
+                      id: 'jacket-1',
+                      name: '2025 T1 Uniform Jacket',
+                      price: 127.00,
+                      img: 'img/t1-jackett.png'
+                    })"
+                  >
+                    <!-- cart icon -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                      />
+                    </svg>
+                  </button>
+                  <img
+                    src="img/t1-jackett.png"
+                    alt=""
+                    class="hidden md:block"
+                  />
+                  <a href="product-detail.html" class="block md:hidden"
+                    ><img src="img/t1-jackett.png" alt=""
+                  /></a>
+                  <a
+                    href="product-detail.html"
+                    class="select-product poppins-medium"
+                  >
+                    + Select Options
+                  </a>
+                </div>
+              </div>
+              <!-- second product card -->
+              <div class="flex flex-col w-80 shrink-0 bg-white">
+                <div class="product">
+                  <button
+                    class="cart-button"
+                    onclick="addToCart({
+                      id: 'jersy-1',
+                      name: '2025 T1 Uniform Jersey',
+                      price: 108.00,
+                      img: 'img/t1-jersey.png'
+                    })"
+                  >
+                    <!-- cart icon -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                      />
+                    </svg>
+                  </button>
+                  <img src="img/t1-jersey.png" alt="" class="hidden md:block" />
+                  <a href="product-detail.html" class="block md:hidden"
+                    ><img src="img/t1-jersey.png" alt=""
+                  /></a>
+                  <a
+                    href="product-detail.html"
+                    class="select-product poppins-medium"
+                  >
+                    + Select Options
+                  </a>
+                </div>
+              </div>
+              <!-- thirt product card -->
+              <div class="flex flex-col w-80 shrink-0 bg-white">
+                <div class="product">
+                  <button
+                    class="cart-button"
+                    onclick="addToCart({
+                      id: 'pant-1',
+                      name: '2025 T1 Uniform Pants',
+                      price: 88.00,
+                      img: 'img/t1-pant.png'
+                    })"
+                  >
+                    <!-- cart icon -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                      />
+                    </svg>
+                  </button>
+                  <img src="img/t1-pant.png" alt="" class="hidden md:block" />
+                  <a href="product-detail.html" class="block md:hidden"
+                    ><img src="img/t1-pant.png" alt=""
+                  /></a>
+                  <a
+                    href="product-detail.html"
+                    class="select-product poppins-medium"
+                  >
+                    + Select Options
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- footer -->
+    <footer class="bg-[#161616] mt-9">
+      <div class="w-full py-6">
+        <div
+          class="max-w-screen-full md:mx-5 lg:mx-20 flex flex-col md:flex md:flex-row justify-between items-center text-white py-4 gap-3 md:gap-0"
+        >
+          <p class="poppins-bold">Oyster Rikreay</p>
+          <div class="flex gap-4 poppins-medium">
+            <a href="contact.html">Contact</a>
+            <p>|</p>
+            <a href="about.html">About us</a>
+          </div>
+          <div class="flex gap-4">
+            <a href=""><i class="fa-brands fa-tiktok"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
