@@ -114,7 +114,10 @@
                 </a>
               </li>
               <li>
-                <a class="text-white transition hover:underline" href="team-kit.html">
+                <a
+                  class="text-white transition hover:underline"
+                  href="team-kit.html"
+                >
                   Team Kit
                 </a>
               </li>
@@ -167,7 +170,10 @@
             </div>
 
             <!-- account -->
-            <a class="rounded-md text-white transition mr-2 md:mr-1" href="sign-in.html">
+            <a
+              class="rounded-md text-white transition mr-2 md:mr-1"
+              href="sign-in.html"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -223,7 +229,6 @@
                 <h2 class="w-1/4 text-right">Total</h2>
               </div>
 
-              
               <hr />
               <div class="flex flex-col md:flex-row md:justify-between">
                 <div class="flex flex-col gap-2">
@@ -238,9 +243,13 @@
                     />
                   </div>
                 </div>
-                <div class="flex flex-col items-start md:items-end gap-3 mt-3 md:mt-0">
-                  <h2 class="poppins-semibold">Total</h2>
-                  <h2 class="cart-summary-total poppins-semibold">$0.00</h2>
+                <div
+                  class="flex flex-col items-start md:items-end gap-3 mt-3 md:mt-0"
+                >
+                  <div class="flex gap-2">
+                    <h2 class="poppins-semibold">Total</h2>
+                    <h2 class="cart-summary-total poppins-semibold">$0.00</h2>
+                  </div>
                   <p class="text-[#A0A0A0] poppins-regular text-sm">
                     delivery fee calculate in checkout
                   </p>
@@ -269,9 +278,15 @@
             <a href="about.html">About us</a>
           </div>
           <div class="flex gap-4">
-            <a href=""><i class="fa-brands fa-tiktok"></i></a>
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
-            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/" target="_blank"
+              ><i class="fa-brands fa-tiktok"></i
+            ></a>
+            <a href="https://www.instagram.com/" target="_blank"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="https://www.facebook.com" target="_blank"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
           </div>
         </div>
       </div>
@@ -291,23 +306,6 @@
             }
           });
         });
-      });
-      const quantityElement = document.getElementById("quantity");
-      const increaseBtn = document.getElementById("increase");
-      const decreaseBtn = document.getElementById("decrease");
-
-      let quantity = 1;
-
-      increaseBtn.addEventListener("click", () => {
-        quantity++;
-        quantityElement.textContent = quantity;
-      });
-
-      decreaseBtn.addEventListener("click", () => {
-        if (quantity > 1) {
-          quantity--;
-          quantityElement.textContent = quantity;
-        }
       });
     </script>
   </body>

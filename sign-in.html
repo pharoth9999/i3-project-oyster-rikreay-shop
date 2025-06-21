@@ -114,7 +114,10 @@
                 </a>
               </li>
               <li>
-                <a class="text-white transition hover:underline" href="team-kit.html">
+                <a
+                  class="text-white transition hover:underline"
+                  href="team-kit.html"
+                >
                   Team Kit
                 </a>
               </li>
@@ -214,7 +217,9 @@
       <div
         class="max-w-screen-full flex justify-center item-center text-white mt-20"
       >
-        <div class="md:w-full max-w-sm p-6 bg-black border border-white shadow-lg">
+        <div
+          class="md:w-full max-w-sm p-6 bg-black border border-white shadow-lg"
+        >
           <h1 class="poppins-semibold text-3xl text-center mb-6">Sign In</h1>
           <form onsubmit="handleSignIn(event)" class="space-y-4">
             <div>
@@ -247,10 +252,20 @@
             >
               Sign In
             </button>
+            <div
+              id="popupMessage"
+              class="fixed top-5 right-160 z-50 hidden bg-red-500 text-white px-4 py-2 shadow poppins-medium transition-opacity duration-300"
+            >
+              Invalid email or password.
+            </div>
           </form>
           <p class="text-sm poppins-regular text-center text-gray-400 mt-4">
             Don't have an account?
-            <a href="sign-up.html" class="text-white hover:underline poppins-medium">Sign up</a>
+            <a
+              href="sign-up.html"
+              class="text-white hover:underline poppins-medium"
+              >Sign up</a
+            >
           </p>
         </div>
       </div>
@@ -268,9 +283,9 @@
             <a href="about.html">About us</a>
           </div>
           <div class="flex gap-4">
-            <a href=""><i class="fa-brands fa-tiktok"></i></a>
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
-            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
           </div>
         </div>
       </div>
@@ -283,12 +298,18 @@
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
-        // Demo validation
-        if (email === "admin@example.com" && password === "123456") {
-          alert("Sign in successful!");
+        const popup = document.getElementById("popupMessage");
+
+        if (email === "roth@gmail.com" && password === "123456") {
           window.location.href = "index.html"; // Redirect to homepage
         } else {
-          alert("Invalid email or password.");
+          popup.classList.remove("hidden");
+          popup.classList.add("opacity-100");
+
+          // Auto-hide after 3 seconds
+          setTimeout(() => {
+            popup.classList.add("hidden");
+          }, 3000);
         }
       }
     </script>

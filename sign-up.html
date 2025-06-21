@@ -114,7 +114,10 @@
                 </a>
               </li>
               <li>
-                <a class="text-white transition hover:underline" href="team-kit.html">
+                <a
+                  class="text-white transition hover:underline"
+                  href="team-kit.html"
+                >
                   Team Kit
                 </a>
               </li>
@@ -237,7 +240,7 @@
               >
               <input
                 type="email"
-                id="email"
+                id="signupEmail"
                 class="w-full px-4 py-2 bg-black border border-white focus:outline-none focus:ring-1 poppins-regular"
                 placeholder="@gmail.com"
                 required
@@ -249,7 +252,19 @@
               >
               <input
                 type="password"
-                id="password"
+                id="signupPassword"
+                class="w-full px-4 py-2 bg-black border border-white focus:outline-none focus:ring-1"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+            <div>
+              <label for="password" class="block mb-1 text-sm poppins-medium"
+                >Comfirm Password</label
+              >
+              <input
+                type="password"
+                id="confirmPassword"
                 class="w-full px-4 py-2 bg-black border border-white focus:outline-none focus:ring-1"
                 placeholder="••••••••"
                 required
@@ -261,10 +276,16 @@
             >
               Sign Up
             </button>
+            <div
+              id="signupPopup"
+              class="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 hidden bg-red-500 text-white px-4 py-2 shadow poppins-medium transition-opacity duration-300"
+            ></div>
           </form>
           <p class="text-sm text-center text-gray-400 mt-4 poppins-regular">
             Already have an account?
-            <a href="sign-in.html" class="text-white hover:underline poppins-medium"
+            <a
+              href="sign-in.html"
+              class="text-white hover:underline poppins-medium"
               >Sign in</a
             >
           </p>
@@ -284,28 +305,51 @@
             <a href="about.html">About us</a>
           </div>
           <div class="flex gap-4">
-            <a href=""><i class="fa-brands fa-tiktok"></i></a>
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
-            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
           </div>
         </div>
       </div>
     </footer>
-
     <script>
       function handleSignIn(event) {
         event.preventDefault();
 
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("signupEmail").value.trim();
+        const password = document.getElementById("signupPassword").value;
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
+        const popup = document.getElementById("signupPopup");
 
-        // Demo validation
-        if (email === "admin@example.com" && password === "123456") {
-          alert("Sign in successful!");
-          window.location.href = "index.html"; // Redirect to homepage
+        // Email format check
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (name === "") {
+          showPopup("Please enter your full name.");
+        } else if (!emailRegex.test(email)) {
+          showPopup("Please enter a valid email address.");
+        } else if (password.length < 6) {
+          showPopup("Password must be at least 6 characters.");
+        } else if (password !== confirmPassword) {
+          showPopup("Passwords do not match.");
         } else {
-          alert("Invalid email or password.");
+          // Simulate redirect after success (optional)
+          setTimeout(() => {
+            window.location.href = "index.html"; // Change this to your homepage
+          }, 1500);
         }
+      }
+
+      function showPopup(message, color = "red") {
+        const popup = document.getElementById("signupPopup");
+        popup.textContent = message;
+        popup.classList.remove("hidden");
+
+        setTimeout(() => {
+          popup.classList.add("hidden");
+        }, 3000);
       }
     </script>
   </body>
